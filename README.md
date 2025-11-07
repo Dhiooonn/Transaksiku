@@ -1,16 +1,49 @@
-# React + Vite
+# 💸 Transaksiku — Aplikasi Simulasi Transfer Digital
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplikasi simulasi transaksi digital modern berbasis **React.js** + **Tailwind CSS**, dilengkapi dengan fitur transfer, riwayat transaksi, dan dashboard interaktif.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🖥️ Preview
 
-## React Compiler
+Tampilan aplikasi seperti sistem perbankan digital — dengan **login, dashboard interaktif, form transfer, dan riwayat transaksi real-time.**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🚀 Fitur Utama
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+✅ **Autentikasi Dummy Login**  
+Masuk menggunakan akun dummy dari file `Dummy.js` (simulasi user login).
+
+✅ **Transfer Uang Digital**  
+Form interaktif untuk simulasi pengiriman uang antar pengguna.
+
+✅ **Riwayat Transaksi Dinamis**  
+Daftar transaksi otomatis terupdate & tersimpan di `localStorage` (per-user).
+
+✅ **Dashboard Ringkasan Finansial**  
+Menampilkan saldo, total transaksi, total transfer, dan aktivitas terbaru.
+
+✅ **Proteksi Halaman (Route Guard)**  
+Halaman admin hanya bisa diakses jika user sudah login.
+
+✅ **UI Modern + UX Friendly**  
+Desain clean dengan Tailwind + komponen reusable dan validasi form interaktif.
+
+---
+
+## 🧠 Tech Stack
+
+| Kategori | Teknologi |
+|-----------|------------|
+| 🧩 Frontend | [React.js (Vite)](https://vitejs.dev/) |
+| 🎨 Styling | [Tailwind CSS](https://tailwindcss.com/) |
+| 🔔 Notifikasi | [React Hot Toast](https://react-hot-toast.com/) |
+| ⚡ Interaksi UI | [SweetAlert2](https://sweetalert2.github.io/) |
+| 💾 Penyimpanan Data | `localStorage` |
+| 🧭 Routing | [React Router DOM v6](https://reactrouter.com/en/main) |
+
+---
+
+## 📂 Struktur Folder
+
