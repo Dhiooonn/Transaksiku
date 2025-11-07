@@ -73,14 +73,14 @@ src/
 │ ├── Dashboard/
 │ │ ├── DashboardPage.jsx
 │ │ └── Components/
-│ │ └── DashboardCard.jsx
+│ │ └──── DashboardCard.jsx
 │ │
 │ └── Transfer/
 │ ├── TransferPage.jsx
 │ └── Components/
-│ ├── TransferForm.jsx
-│ ├── TransactionList.jsx
-│ └── TransactionCard.jsx
+│ ├──── TransferForm.jsx
+│ ├──── TransactionList.jsx
+│ └──── TransactionCard.jsx
 │
 ├── Routes/
 │ ├── Router.jsx
@@ -91,6 +91,15 @@ src/
 │
 └── Utils/
 └── Helpers/
-├── SwalHelpers.js
-└── ToastHelpers.js
+├──── SwalHelpers.js
+└──── ToastHelpers.js
 ```
+---
+
+## ⚙️ Cara Menjalankan Proyek
+
+### 1️⃣ Clone Repository
+```bash
+git clone https://github.com/<username>/transaksiku.git
+cd transaksiku
+
