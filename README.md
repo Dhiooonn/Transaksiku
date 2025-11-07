@@ -46,7 +46,7 @@ Desain clean dengan Tailwind + komponen reusable dan validasi form interaktif.
 ---
 
 ## 📂 Struktur Folder
-
+```bash
 src/
 ├── App.jsx
 ├── main.jsx
@@ -93,3 +93,4 @@ src/
 └── Helpers/
 ├── SwalHelpers.js
 └── ToastHelpers.js
+```
