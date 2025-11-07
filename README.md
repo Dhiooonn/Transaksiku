@@ -102,16 +102,20 @@ src/
 ```bash
 git clone https://github.com/<username>/transaksiku.git
 cd transaksiku
+```
 
 ### 2️⃣ Clone Repository
 ```bash
 npm install
+```
 
 ### 3️⃣ Jalankan Project
 ```bash
 npm run dev
+```
 
 ### 4️⃣ Jalankan Project
 ```bash
 http://localhost:5173
+```
 
