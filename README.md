@@ -47,3 +47,49 @@ Desain clean dengan Tailwind + komponen reusable dan validasi form interaktif.
 
 ## 📂 Struktur Folder
 
+src/
+├── App.jsx
+├── main.jsx
+├── index.css
+│
+├── assets/
+│ └── (gambar/logo/icon)
+│
+├── Components/
+│ ├── Button.jsx
+│ ├── Header.jsx
+│ ├── Input.jsx
+│ ├── Modal.jsx
+│ ├── Sidebar.jsx
+│ └── Card.jsx
+│
+├── Layouts/
+│ └── AdminLayout.jsx
+│
+├── Pages/
+│ ├── Auth/
+│ │ └── Login.jsx
+│ │
+│ ├── Dashboard/
+│ │ ├── DashboardPage.jsx
+│ │ └── Components/
+│ │ └── DashboardCard.jsx
+│ │
+│ └── Transfer/
+│ ├── TransferPage.jsx
+│ └── Components/
+│ ├── TransferForm.jsx
+│ ├── TransactionList.jsx
+│ └── TransactionCard.jsx
+│
+├── Routes/
+│ ├── Router.jsx
+│ └── ProtectedRoute.jsx
+│
+├── Data/
+│ └── Dummy.js
+│
+└── Utils/
+└── Helpers/
+├── SwalHelpers.js
+└── ToastHelpers.js
