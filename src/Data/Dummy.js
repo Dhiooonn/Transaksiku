@@ -13,6 +13,7 @@ export const transaksiList = [
     nominal: 500000,
     catatan: "Bayar utang",
     status: "Berhasil",
+    kategori: "Transfer",
   },
   {
     id: "TRX002",
@@ -21,6 +22,7 @@ export const transaksiList = [
     nominal: 250000,
     catatan: "Transfer pulsa",
     status: "Berhasil",
+    kategori: "Top Up",
   },
   {
     id: "TRX003",
@@ -29,5 +31,6 @@ export const transaksiList = [
     nominal: 1000000,
     catatan: "Biaya kuliah",
     status: "Berhasil",
+    kategori: "Pembayaran",
   },
 ];
