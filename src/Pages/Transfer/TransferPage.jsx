@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef } from "react";
-import { transaksiList } from "@/Data/Dummy";
+import { transaksiList } from "@/Data/Dummy"; // Pastikan path ini benar
 import AdminLayout from "@/Layouts/AdminLayout";
-import Header from "@/Components/Header";
+import { ArrowRightLeft, History } from "lucide-react";
+
+// Components
 import TransferForm from "./Components/TransferForm";
 import TransactionList from "./Components/TransactionList";
-import { toastSuccess } from "@/Utils/Helpers/ToastHelpers";
 
 export default function TransferPage() {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -12,7 +13,7 @@ export default function TransferPage() {
   const [transactions, setTransactions] = useState([]);
   const isFirstRender = useRef(true);
 
-  // Ambil data dari localStorage saat pertama kali
+  // Load Data
   useEffect(() => {
     const stored = JSON.parse(localStorage.getItem(storageKey));
     if (stored) {
@@ -23,7 +24,7 @@ export default function TransferPage() {
     }
   }, [storageKey]);
 
-  // Save ke localStorage setiap kali transaksi berubah
+  // Sync to Storage
   useEffect(() => {
     if (isFirstRender.current) {
       isFirstRender.current = false;
@@ -32,7 +33,7 @@ export default function TransferPage() {
     localStorage.setItem(storageKey, JSON.stringify(transactions));
   }, [transactions, storageKey]);
 
-  // Handle Transfer Baru
+  // Handle Transfer Logic
   const handleTransfer = (data) => {
     const newTx = {
       id: `TRX${String(transactions.length + 1).padStart(3, "0")}`,
@@ -43,31 +44,52 @@ export default function TransferPage() {
 
     const updated = [newTx, ...transactions];
     setTransactions(updated);
-
-    // Simpan ke localStorage
-    localStorage.setItem(storageKey, JSON.stringify(updated));
-
-    // Kirim event sinkronisasi ke Dashboard
+    
+    // Trigger event untuk update dashboard realtime
     window.dispatchEvent(new Event("transactions-updated"));
   };
 
   return (
     <AdminLayout>
-      {/* Header */}
-      <Header
-        title="Dashboard Transfer"
-        subtitle="Lakukan transfer dan pantau riwayat transaksi Anda."
-      />
+      <div className="font-sans text-slate-800 space-y-8 p-2">
+        
+        {/* Header */}
+        <div className="flex flex-col gap-1">
+           <h1 className="text-3xl font-bold tracking-tight text-slate-900 flex items-center gap-3">
+             <div className="bg-blue-600 p-2 rounded-xl text-white">
+                <ArrowRightLeft size={24} />
+             </div>
+             Transfer Dana
+           </h1>
+           <p className="text-slate-500 font-medium ml-[3.25rem]">
+             Kirim uang dengan aman dan pantau riwayat transaksi Anda.
+           </p>
+        </div>
 
-      <div className="flex flex-col gap-6">
-        {/* Form Transfer */}
-        <TransferForm onTransfer={handleTransfer} />
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
+          {/* Kolom Kiri: Form Transfer */}
+          <div className="xl:col-span-1">
+             <TransferForm onTransfer={handleTransfer} />
+          </div>
 
-        {/* Riwayat Transaksi */}
-        <TransactionList
-          transactions={transactions}
-          setTransactions={setTransactions}
-        />
+          {/* Kolom Kanan: Riwayat Transaksi */}
+          <div className="xl:col-span-2">
+             <div className="bg-white rounded-[2rem] p-8 shadow-sm border border-slate-100 min-h-[600px]">
+                <div className="flex items-center gap-3 mb-6">
+                   <div className="bg-orange-50 p-2 rounded-lg text-orange-500">
+                      <History size={20} />
+                   </div>
+                   <h2 className="text-xl font-bold text-slate-800">Riwayat Transaksi</h2>
+                </div>
+                
+                <TransactionList 
+                  transactions={transactions} 
+                  setTransactions={setTransactions} 
+                />
+             </div>
+          </div>
+        </div>
+
       </div>
     </AdminLayout>
   );

@@ -2,6 +2,9 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Login from "@/Pages/Auth/Login";
 import TransferPage from "@/Pages/Transfer/TransferPage";
 import DashboardPage from "@/Pages/Dashboard/DashboardPage";
+import RekeningPage from "@/Pages/Rekening/RekeningPage";
+import LaporanPage from "@/Pages/Laporan/LaporanPage";
+import SettingsPage from "@/Pages/Settings/SettingsPage";
 import AdminLayout from "@/Layouts/AdminLayout";
 import ProtectedRoute from "./ProtectedRoute"; 
 import { Toaster } from "react-hot-toast";
@@ -42,6 +45,42 @@ export default function Router() {
             <ProtectedRoute>
               <AdminLayout>
                 <TransferPage />
+              </AdminLayout>
+            </ProtectedRoute>
+          }
+        />
+
+        {/* Rekening */}
+         <Route
+          path="/admin/rekening"
+          element={
+            <ProtectedRoute>
+              <AdminLayout>
+                <RekeningPage />
+              </AdminLayout>
+            </ProtectedRoute>
+          }
+        />
+
+        {/* Laporan */}
+         <Route
+          path="/admin/laporan"
+          element={
+            <ProtectedRoute>
+              <AdminLayout>
+                <LaporanPage />
+              </AdminLayout>
+            </ProtectedRoute>
+          }
+        />
+
+        {/* Setting */}
+         <Route
+          path="/admin/settings"
+          element={
+            <ProtectedRoute>
+              <AdminLayout>
+                <SettingsPage />
               </AdminLayout>
             </ProtectedRoute>
           }

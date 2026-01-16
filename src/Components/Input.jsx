@@ -1,5 +1,6 @@
 export default function Input({
   label,
+  name,
   type = "text",
   placeholder = "",
   value,
@@ -15,6 +16,7 @@ export default function Input({
       )}
       {textarea ? (
         <textarea
+          name={name}
           placeholder={placeholder}
           value={value}
           onChange={onChange}
@@ -24,6 +26,7 @@ export default function Input({
         />
       ) : (
         <input
+          name={name}
           type={type}
           placeholder={placeholder}
           value={value}

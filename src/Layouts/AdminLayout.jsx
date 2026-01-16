@@ -7,7 +7,7 @@ export default function AdminLayout({ children }) {
       <Sidebar />
 
       {/* Konten utama */}
-      <main className="fixed left-64 right-0 top-0 bottom-0 overflow-y-auto p-8 bg-gray-100">
+      <main className="fixed left-68 right-0 top-0 bottom-0 overflow-y-auto p-8 bg-gray-100">
         {children}
       </main>
     </div>
